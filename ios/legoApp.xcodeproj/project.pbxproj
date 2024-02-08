@@ -12,8 +12,35 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		4E6C98CCA74148FDA2DC9DC0 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9795B9A65E9420E8F31181D /* Gilroy-Bold.ttf */; };
+		6156E4654CE74506B1B90A99 /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B2C4F7FAF6F4A7BA3EEACD4 /* Gilroy-Regular.ttf */; };
+		6795A2262B7467AD00650957 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2252B7466D500650957 /* AntDesign.ttf */; };
+		6795A2272B7467AD00650957 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2162B7466D000650957 /* Entypo.ttf */; };
+		6795A2282B7467AD00650957 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2172B7466D100650957 /* EvilIcons.ttf */; };
+		6795A2292B7467AD00650957 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2232B7466D400650957 /* Feather.ttf */; };
+		6795A22A2B7467AD00650957 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2212B7466D400650957 /* FontAwesome.ttf */; };
+		6795A22B2B7467AD00650957 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2152B7466D000650957 /* FontAwesome5_Brands.ttf */; };
+		6795A22C2B7467AD00650957 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A21A2B7466D200650957 /* FontAwesome5_Regular.ttf */; };
+		6795A22D2B7467AD00650957 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2142B7466D000650957 /* FontAwesome5_Solid.ttf */; };
+		6795A22E2B7467AD00650957 /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2222B7466D400650957 /* FontAwesome6_Brands.ttf */; };
+		6795A22F2B7467AD00650957 /* FontAwesome6_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2182B7466D100650957 /* FontAwesome6_Regular.ttf */; };
+		6795A2302B7467AD00650957 /* FontAwesome6_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A21B2B7466D200650957 /* FontAwesome6_Solid.ttf */; };
+		6795A2312B7467AD00650957 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A21C2B7466D200650957 /* Fontisto.ttf */; };
+		6795A2322B7467AD00650957 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A21D2B7466D200650957 /* Foundation.ttf */; };
+		6795A2332B7467AD00650957 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2242B7466D500650957 /* Ionicons.ttf */; };
+		6795A2342B7467AD00650957 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A21E2B7466D300650957 /* MaterialCommunityIcons.ttf */; };
+		6795A2352B7467AD00650957 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2132B7466D000650957 /* MaterialIcons.ttf */; };
+		6795A2362B7467AD00650957 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A21F2B7466D300650957 /* Octicons.ttf */; };
+		6795A2372B7467AD00650957 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2202B7466D400650957 /* SimpleLineIcons.ttf */; };
+		6795A2382B7467AD00650957 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6795A2192B7466D100650957 /* Zocial.ttf */; };
+		679ABA352B748C6B00AFE676 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 679ABA342B748C6A00AFE676 /* GoogleService-Info.plist */; };
+		679ABA382B748D4A00AFE676 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 679ABA372B748D4A00AFE676 /* FirebaseAuth */; };
+		679ABA3A2B748D4A00AFE676 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 679ABA392B748D4A00AFE676 /* FirebaseDatabase */; };
+		679ABA3C2B748D4A00AFE676 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 679ABA3B2B748D4A00AFE676 /* FirebaseFirestore */; };
+		679ABA3E2B748D4A00AFE676 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 679ABA3D2B748D4A00AFE676 /* FirebaseStorage */; };
 		7699B88040F8A987B510C191 /* libPods-legoApp-legoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-legoApp-legoAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E18FF51649BD4A0E850BA7FA /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E32B16076F2E4397B0EE623B /* Gilroy-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +64,35 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = legoApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = legoApp/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-legoApp-legoAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-legoApp-legoAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B2C4F7FAF6F4A7BA3EEACD4 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Regular.ttf"; path = "../assets/fonts/Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-legoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legoApp.debug.xcconfig"; path = "Target Support Files/Pods-legoApp/Pods-legoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-legoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legoApp.release.xcconfig"; path = "Target Support Files/Pods-legoApp/Pods-legoApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-legoApp-legoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legoApp-legoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-legoApp-legoAppTests/Pods-legoApp-legoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-legoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-legoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6795A2132B7466D000650957 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		6795A2142B7466D000650957 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		6795A2152B7466D000650957 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		6795A2162B7466D000650957 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		6795A2172B7466D100650957 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		6795A2182B7466D100650957 /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome6_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome6_Regular.ttf"; sourceTree = "<group>"; };
+		6795A2192B7466D100650957 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		6795A21A2B7466D200650957 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		6795A21B2B7466D200650957 /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome6_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome6_Solid.ttf"; sourceTree = "<group>"; };
+		6795A21C2B7466D200650957 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		6795A21D2B7466D200650957 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		6795A21E2B7466D300650957 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		6795A21F2B7466D300650957 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		6795A2202B7466D400650957 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		6795A2212B7466D400650957 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		6795A2222B7466D400650957 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome6_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome6_Brands.ttf"; sourceTree = "<group>"; };
+		6795A2232B7466D400650957 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		6795A2242B7466D500650957 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		6795A2252B7466D500650957 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		679ABA342B748C6A00AFE676 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = legoApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-legoApp-legoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legoApp-legoAppTests.release.xcconfig"; path = "Target Support Files/Pods-legoApp-legoAppTests/Pods-legoApp-legoAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		D9795B9A65E9420E8F31181D /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Bold.ttf"; path = "../assets/fonts/Gilroy-Bold.ttf"; sourceTree = "<group>"; };
+		E32B16076F2E4397B0EE623B /* Gilroy-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Light.ttf"; path = "../assets/fonts/Gilroy-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -59,7 +109,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				679ABA3A2B748D4A00AFE676 /* FirebaseDatabase in Frameworks */,
+				679ABA3C2B748D4A00AFE676 /* FirebaseFirestore in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-legoApp.a in Frameworks */,
+				679ABA3E2B748D4A00AFE676 /* FirebaseStorage in Frameworks */,
+				679ABA382B748D4A00AFE676 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,10 +140,12 @@
 		13B07FAE1A68108700A75B9A /* legoApp */ = {
 			isa = PBXGroup;
 			children = (
+				6795A2122B74665F00650957 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				679ABA342B748C6A00AFE676 /* GoogleService-Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -104,6 +160,32 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-legoApp-legoAppTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6795A2122B74665F00650957 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6795A2252B7466D500650957 /* AntDesign.ttf */,
+				6795A2162B7466D000650957 /* Entypo.ttf */,
+				6795A2172B7466D100650957 /* EvilIcons.ttf */,
+				6795A2232B7466D400650957 /* Feather.ttf */,
+				6795A2212B7466D400650957 /* FontAwesome.ttf */,
+				6795A2152B7466D000650957 /* FontAwesome5_Brands.ttf */,
+				6795A21A2B7466D200650957 /* FontAwesome5_Regular.ttf */,
+				6795A2142B7466D000650957 /* FontAwesome5_Solid.ttf */,
+				6795A2222B7466D400650957 /* FontAwesome6_Brands.ttf */,
+				6795A2182B7466D100650957 /* FontAwesome6_Regular.ttf */,
+				6795A21B2B7466D200650957 /* FontAwesome6_Solid.ttf */,
+				6795A21C2B7466D200650957 /* Fontisto.ttf */,
+				6795A21D2B7466D200650957 /* Foundation.ttf */,
+				6795A2242B7466D500650957 /* Ionicons.ttf */,
+				6795A21E2B7466D300650957 /* MaterialCommunityIcons.ttf */,
+				6795A2132B7466D000650957 /* MaterialIcons.ttf */,
+				6795A21F2B7466D300650957 /* Octicons.ttf */,
+				6795A2202B7466D400650957 /* SimpleLineIcons.ttf */,
+				6795A2192B7466D100650957 /* Zocial.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -122,6 +204,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				C372FA3E86AF43889540A0C5 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -146,6 +229,16 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-legoApp-legoAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C372FA3E86AF43889540A0C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9795B9A65E9420E8F31181D /* Gilroy-Bold.ttf */,
+				E32B16076F2E4397B0EE623B /* Gilroy-Light.ttf */,
+				2B2C4F7FAF6F4A7BA3EEACD4 /* Gilroy-Regular.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +282,12 @@
 			dependencies = (
 			);
 			name = legoApp;
+			packageProductDependencies = (
+				679ABA372B748D4A00AFE676 /* FirebaseAuth */,
+				679ABA392B748D4A00AFE676 /* FirebaseDatabase */,
+				679ABA3B2B748D4A00AFE676 /* FirebaseFirestore */,
+				679ABA3D2B748D4A00AFE676 /* FirebaseStorage */,
+			);
 			productName = legoApp;
 			productReference = 13B07F961A680F5B00A75B9A /* legoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -219,6 +318,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				679ABA362B748D4A00AFE676 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,8 +343,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6795A2262B7467AD00650957 /* AntDesign.ttf in Resources */,
+				6795A2272B7467AD00650957 /* Entypo.ttf in Resources */,
+				679ABA352B748C6B00AFE676 /* GoogleService-Info.plist in Resources */,
+				6795A2282B7467AD00650957 /* EvilIcons.ttf in Resources */,
+				6795A2292B7467AD00650957 /* Feather.ttf in Resources */,
+				6795A22A2B7467AD00650957 /* FontAwesome.ttf in Resources */,
+				6795A22B2B7467AD00650957 /* FontAwesome5_Brands.ttf in Resources */,
+				6795A22C2B7467AD00650957 /* FontAwesome5_Regular.ttf in Resources */,
+				6795A22D2B7467AD00650957 /* FontAwesome5_Solid.ttf in Resources */,
+				6795A22E2B7467AD00650957 /* FontAwesome6_Brands.ttf in Resources */,
+				6795A22F2B7467AD00650957 /* FontAwesome6_Regular.ttf in Resources */,
+				6795A2302B7467AD00650957 /* FontAwesome6_Solid.ttf in Resources */,
+				6795A2312B7467AD00650957 /* Fontisto.ttf in Resources */,
+				6795A2322B7467AD00650957 /* Foundation.ttf in Resources */,
+				6795A2332B7467AD00650957 /* Ionicons.ttf in Resources */,
+				6795A2342B7467AD00650957 /* MaterialCommunityIcons.ttf in Resources */,
+				6795A2352B7467AD00650957 /* MaterialIcons.ttf in Resources */,
+				6795A2362B7467AD00650957 /* Octicons.ttf in Resources */,
+				6795A2372B7467AD00650957 /* SimpleLineIcons.ttf in Resources */,
+				6795A2382B7467AD00650957 /* Zocial.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				4E6C98CCA74148FDA2DC9DC0 /* Gilroy-Bold.ttf in Resources */,
+				E18FF51649BD4A0E850BA7FA /* Gilroy-Light.ttf in Resources */,
+				6156E4654CE74506B1B90A99 /* Gilroy-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,7 +669,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -572,6 +697,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -579,7 +705,13 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -616,7 +748,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -636,6 +768,7 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -643,7 +776,13 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -679,6 +818,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		679ABA362B748D4A00AFE676 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		679ABA372B748D4A00AFE676 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 679ABA362B748D4A00AFE676 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		679ABA392B748D4A00AFE676 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 679ABA362B748D4A00AFE676 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		679ABA3B2B748D4A00AFE676 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 679ABA362B748D4A00AFE676 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		679ABA3D2B748D4A00AFE676 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 679ABA362B748D4A00AFE676 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }
