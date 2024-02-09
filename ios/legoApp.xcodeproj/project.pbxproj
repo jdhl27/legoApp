@@ -41,6 +41,7 @@
 		7699B88040F8A987B510C191 /* libPods-legoApp-legoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-legoApp-legoAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		E18FF51649BD4A0E850BA7FA /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E32B16076F2E4397B0EE623B /* Gilroy-Light.ttf */; };
+		EE0F3B4B463F44069B2218A7 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5D2F22EE70D4AA4B5791F9A /* Gilroy-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-legoApp-legoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legoApp-legoAppTests.release.xcconfig"; path = "Target Support Files/Pods-legoApp-legoAppTests/Pods-legoApp-legoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D9795B9A65E9420E8F31181D /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Bold.ttf"; path = "../assets/fonts/Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		E32B16076F2E4397B0EE623B /* Gilroy-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Light.ttf"; path = "../assets/fonts/Gilroy-Light.ttf"; sourceTree = "<group>"; };
+		E5D2F22EE70D4AA4B5791F9A /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Medium.ttf"; path = "../assets/fonts/Gilroy-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -237,6 +239,7 @@
 				D9795B9A65E9420E8F31181D /* Gilroy-Bold.ttf */,
 				E32B16076F2E4397B0EE623B /* Gilroy-Light.ttf */,
 				2B2C4F7FAF6F4A7BA3EEACD4 /* Gilroy-Regular.ttf */,
+				E5D2F22EE70D4AA4B5791F9A /* Gilroy-Medium.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				4E6C98CCA74148FDA2DC9DC0 /* Gilroy-Bold.ttf in Resources */,
 				E18FF51649BD4A0E850BA7FA /* Gilroy-Light.ttf in Resources */,
 				6156E4654CE74506B1B90A99 /* Gilroy-Regular.ttf in Resources */,
+				EE0F3B4B463F44069B2218A7 /* Gilroy-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
