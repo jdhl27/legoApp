@@ -1,8 +1,10 @@
 import {
+  createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import {addDoc, collection, getDocs, query, where} from 'firebase/firestore';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {auth, db} from './firebaseConfig';
 
 // Auth firebase
@@ -40,4 +42,25 @@ export const forgotPasswordFirebase = email => {
         resolve(false);
       });
   });
+};
+
+// Register user firebase
+export const registerUserFirebase = async userState => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      userState.email,
+      userState.password,
+    );
+    delete userState.password;
+
+    const docRef = await addDoc(collection(db, 'users'), {
+      id: userCredential.user.uid,
+      ...userState,
+    });
+    await AsyncStorage.setItem('userId', userCredential.user.uid);
+    return true;
+  } catch (error) {
+    return false;
+  }
 };
