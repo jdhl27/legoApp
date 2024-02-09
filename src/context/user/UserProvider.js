@@ -7,6 +7,7 @@ import {SET_USER_DATA, UPDATE_CREDIT} from '../types';
 const UserProvider = ({children}) => {
   const [state, dispatch] = useReducer(UserReducer, {
     credit: 3000,
+    isDarkTheme: false,
   });
 
   const setUserData = userData => {
@@ -22,6 +23,7 @@ const UserProvider = ({children}) => {
       value={{
         user: state,
         credit: state.credit,
+        isDarkTheme: state.isDarkTheme,
         setUserData,
         updateCredit,
       }}>
