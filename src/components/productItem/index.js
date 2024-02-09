@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Counter from '../counter';
+import {useUser} from '../../context/user/UserProvider';
+import {getCurrentTheme} from '../../../constants/themes';
+import {sharedStyles} from '../../../constants/sharedStyles';
+import ButtonComponent from '../button';
 
 const ProductItem = ({
   onClickDetail,
@@ -9,6 +13,8 @@ const ProductItem = ({
   updateProductQuantity,
 }) => {
   const [quantity, setQuantity] = useState(item.quantity || 1);
+  const {isDarkTheme} = useUser();
+  const currentTheme = getCurrentTheme(isDarkTheme);
 
   const handleIncrease = () => {
     if (quantity < item.stock) {
@@ -24,11 +30,13 @@ const ProductItem = ({
 
   return (
     <TouchableOpacity
-      style={styles.productItem}
+      style={styles.productItem(currentTheme)}
       onPress={() => onClickDetail()}>
-      <Image source={{uri: item.image}} style={styles.productImage} />
-      <Text>{item.name}</Text>
-      <Text>${item.unit_price}</Text>
+      <View style={styles.containerImageText}>
+        <Image source={{uri: item.image}} style={styles.productImage} />
+        <Text style={styles.name(currentTheme)}>{item.name}</Text>
+      </View>
+      <Text style={styles.price(currentTheme)}>${item.unit_price}</Text>
 
       {item?.stock > 0 ? (
         <>
@@ -37,48 +45,68 @@ const ProductItem = ({
             onIncrease={handleIncrease}
             onDecrease={handleDecrease}
           />
-          <TouchableOpacity
-            style={styles.addToCartButton}
+
+          <ButtonComponent
+            style={styles.button}
+            styleText={styles.textButton}
+            text={'Add to cart'}
             onPress={() => {
               addToCart({...item, quantity});
               updateProductQuantity(item.id, item.stock - quantity);
               setQuantity(1);
-            }}>
-            <Text style={styles.addToCartButtonText}>Agregar al Carrito</Text>
-          </TouchableOpacity>
+            }}
+            currentTheme={currentTheme}
+          />
         </>
       ) : (
-        <Text style={{marginTop: 20, color: 'red'}}>No hay Stock</Text>
+        <Text style={styles.noStock(currentTheme)}>No stock</Text>
       )}
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  productItem: {
-    flex: 1,
-    margin: 8,
-    padding: 16,
+  productItem: currentTheme => ({
+    width: '46%',
+    margin: 7,
+    padding: 10,
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: currentTheme?.background,
+    backgroundColor: currentTheme?.background,
     borderRadius: 8,
     alignItems: 'center',
-  },
+    ...currentTheme.shadow,
+  }),
   productImage: {
     width: 100,
     height: 100,
+    resizeMode: 'center',
+    alignSelf: 'center',
     marginBottom: 8,
   },
-  addToCartButton: {
-    marginTop: 8,
-    padding: 8,
-    backgroundColor: 'green',
-    borderRadius: 4,
+  containerImageText: {
+    height: 145,
   },
-  addToCartButtonText: {
-    color: 'white',
-    textAlign: 'center',
+  name: currentTheme => ({
+    ...sharedStyles.textBold(currentTheme),
+  }),
+  price: currentTheme => ({
+    ...sharedStyles.textRegular(currentTheme),
+    marginVertical: 10,
+  }),
+  button: {
+    paddingVertical: 7,
+    width: '70%',
+    marginTop: 10,
   },
+  textButton: {
+    fontSize: 12,
+  },
+  noStock: currentTheme => ({
+    ...sharedStyles.textRegular(currentTheme),
+    marginVertical: 10,
+    color: currentTheme?.error,
+  }),
 });
 
 export default ProductItem;
