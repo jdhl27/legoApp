@@ -1,36 +1,54 @@
 import React, {useEffect} from 'react';
-import {View, Text, FlatList, TouchableOpacity, StyleSheet} from 'react-native';
-import axios from 'axios';
+import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+
 import {useCart} from '../../context/cart/CartProvider';
 import ProductItem from '../../components/productItem';
 import {useProduct} from '../../context/product/ProductProvider';
 import {useUser} from '../../context/user/UserProvider';
+import LoadingComponent from '../../components/loading';
+import {makeRequest} from '../../api/api';
+import HeaderComponent from '../../components/header';
+import {getCurrentTheme} from '../../../constants/themes';
+import {styles} from './styles';
+import {CommonActions} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const HomeView = ({navigation}) => {
   const {addToCart} = useCart();
   const {products, addProducts, updateProductQuantity} = useProduct();
-  const {credit} = useUser();
+  const {user, isDarkTheme, setUserData} = useUser();
+  const currentTheme = getCurrentTheme(isDarkTheme);
 
   useEffect(() => {
-    // Solo cargar los productos si la lista está vacía
+    const getData = async () => {
+      const response = await makeRequest('GET', 'all-products');
+      addProducts(response.products);
+    };
+
     if (products.length === 0) {
-      axios
-        .get(
-          'https://1be9db56-c889-466d-9c12-cba178414901.mock.pstmn.io/all-products',
-        )
-        .then(response => {
-          addProducts(response.data.products);
-        })
-        .catch(error => console.error('Error fetching products:', error));
+      getData();
     }
-  }, [addProducts, products]);
+  }, [addProducts, products.length]);
 
   const navigateToCart = () => {
     navigation.navigate('Cart');
   };
 
-  const renderProductItem = ({item}) => (
+  const onPressLogout = async () => {
+    await AsyncStorage.removeItem('user');
+    setUserData({credit: 3000, isDarkTheme: false});
+
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{name: 'Login'}],
+      }),
+    );
+  };
+
+  const renderProductItem = (item, i) => (
     <ProductItem
+      key={i}
       onClickDetail={() =>
         navigation.navigate('ProductDetails', {product: item})
       }
@@ -40,70 +58,22 @@ const HomeView = ({navigation}) => {
     />
   );
 
-  if (!products) {
-    return (
-      <View style={{flex: 1}}>
-        <Text>Cargando...</Text>
-      </View>
-    );
-  }
-
   return (
-    <View style={styles.container}>
-      <Text>${credit}</Text>
-      <TouchableOpacity style={styles.cartButton} onPress={navigateToCart}>
-        <Text style={styles.cartButtonText}>Carrito</Text>
-      </TouchableOpacity>
-      <FlatList
-        data={products}
-        keyExtractor={item => item.id.toString()}
-        renderItem={renderProductItem}
-        numColumns={2}
-      />
-    </View>
+    <LoadingComponent loading={false}>
+      <SafeAreaView style={styles.container(currentTheme)}>
+        <HeaderComponent
+          onPressCart={navigateToCart}
+          onPressLogout={onPressLogout}
+        />
+        <ScrollView style={styles.containerPadding}>
+          <Text style={styles.title(currentTheme)}>Welcome, {user?.name}</Text>
+          <View style={styles.containerProducts}>
+            {products?.map((item, i) => renderProductItem(item, i))}
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </LoadingComponent>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-  productItem: {
-    flex: 1,
-    margin: 8,
-    padding: 16,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    alignItems: 'center',
-  },
-  productImage: {
-    width: 100,
-    height: 100,
-    marginBottom: 8,
-  },
-  addToCartButton: {
-    marginTop: 8,
-    padding: 8,
-    backgroundColor: 'green',
-    borderRadius: 4,
-  },
-  addToCartButtonText: {
-    color: 'white',
-    textAlign: 'center',
-  },
-  cartButton: {
-    padding: 10,
-    backgroundColor: 'blue',
-    borderRadius: 4,
-    marginBottom: 16,
-    alignSelf: 'flex-end',
-  },
-  cartButtonText: {
-    color: 'white',
-    textAlign: 'center',
-  },
-});
 
 export default HomeView;
