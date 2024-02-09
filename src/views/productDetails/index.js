@@ -1,16 +1,33 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-import axios from 'axios';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
+
 import Counter from '../../components/counter';
 import {useCart} from '../../context/cart/CartProvider';
 import {useProduct} from '../../context/product/ProductProvider';
+import {makeRequest} from '../../api/api';
+import {useUser} from '../../context/user/UserProvider';
+import {getCurrentTheme} from '../../../constants/themes';
+import ButtonComponent from '../../components/button';
+import {sharedStyles} from '../../../constants/sharedStyles';
+import HeaderComponent from '../../components/header';
+import LoadingComponent from '../../components/loading';
 
-const ProductDetailsView = ({route}) => {
+const ProductDetailsView = ({navigation, route}) => {
   const {product} = route.params;
-
-  const {addToCart} = useCart();
   const {products, updateProductQuantity} = useProduct();
+  const {addToCart} = useCart();
+  const {isDarkTheme} = useUser();
+  const currentTheme = getCurrentTheme(isDarkTheme);
 
+  const [isLoading, setIsLoading] = useState(true);
   const [quantity, setQuantity] = useState(product.quantity || 1);
   const [productDetails, setProductDetails] = useState(null);
 
@@ -29,81 +46,106 @@ const ProductDetailsView = ({route}) => {
   };
 
   useEffect(() => {
-    axios
-      .get(
-        `https://1be9db56-c889-466d-9c12-cba178414901.mock.pstmn.io/detail/${product.id}`,
-      )
-      .then(response => {
-        setProductDetails(response.data);
-      })
-      .catch(error => console.error('Error fetching products:', error));
+    const getData = async () => {
+      const response = await makeRequest('GET', `detail/${product.id}`);
+      setProductDetails(response);
+      setIsLoading(false);
+    };
+
+    getData();
   }, [product.id]);
 
-  if (!productDetails) {
-    return (
-      <View style={styles.loadingContainer}>
-        <Text>Cargando detalles del producto...</Text>
-      </View>
-    );
-  }
+  const navigateToCart = () => {
+    navigation.navigate('Cart');
+  };
+  const navigateToBack = () => {
+    navigation.goBack();
+  };
 
   return (
-    <View style={styles.container}>
-      <Image source={{uri: product.image}} style={styles.productImage} />
-      <Text>{product.name}</Text>
-      <Text>${product.unit_price}</Text>
-      {stock > 0 ? (
-        <>
-          <Text>Stock: {stock}</Text>
-          <Counter
-            value={quantity}
-            onIncrease={handleIncrease}
-            onDecrease={handleDecrease}
-          />
-          <TouchableOpacity
-            style={styles.addToCartButton}
-            onPress={() => {
-              addToCart({...product, quantity});
-              updateProductQuantity(product.id, stock - quantity);
-              setQuantity(1);
-            }}>
-            <Text style={styles.addToCartButtonText}>Agregar al Carrito</Text>
-          </TouchableOpacity>
-        </>
-      ) : (
-        <Text style={{marginTop: 20, color: 'red'}}>No hay Stock</Text>
-      )}
+    <LoadingComponent loading={isLoading}>
+      <SafeAreaView style={styles.container(currentTheme)}>
+        <HeaderComponent
+          onPressCart={navigateToCart}
+          onPressBack={navigateToBack}
+        />
+        <View style={styles.containerPadding}>
+          <Image source={{uri: product.image}} style={styles.productImage} />
+          <Text style={styles.name(currentTheme)}>{product.name}</Text>
+          <Text style={styles.price(currentTheme)}>${product.unit_price}</Text>
 
-      <Text>{productDetails.description}</Text>
-    </View>
+          {stock > 0 ? (
+            <>
+              <Text style={styles.price(currentTheme)}>Stock: {stock}</Text>
+              <Counter
+                value={quantity}
+                onIncrease={handleIncrease}
+                onDecrease={handleDecrease}
+              />
+
+              <ButtonComponent
+                style={styles.button}
+                styleText={styles.textButton}
+                text={'Add to cart'}
+                onPress={() => {
+                  addToCart({...product, quantity});
+                  updateProductQuantity(product.id, stock - quantity);
+                  setQuantity(1);
+                }}
+                currentTheme={currentTheme}
+              />
+            </>
+          ) : (
+            <Text style={styles.noStockText}>No hay Stock</Text>
+          )}
+
+          <Text style={styles.description(currentTheme)}>
+            {productDetails?.description}
+          </Text>
+        </View>
+      </SafeAreaView>
+    </LoadingComponent>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  container: currentTheme => ({
     flex: 1,
     padding: 16,
-    alignItems: 'center',
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+    backgroundColor: currentTheme.background,
+  }),
   productImage: {
     width: 200,
     height: 200,
     marginBottom: 16,
+    borderRadius: 8,
   },
-  addToCartButton: {
-    marginTop: 8,
-    padding: 8,
-    backgroundColor: 'green',
-    borderRadius: 4,
+  name: currentTheme => ({
+    ...sharedStyles.textBold(currentTheme),
+    fontSize: 30,
+  }),
+  price: currentTheme => ({
+    ...sharedStyles.textRegular(currentTheme),
+    marginVertical: 10,
+  }),
+  description: currentTheme => ({
+    ...sharedStyles.textMedium(currentTheme),
+    marginVertical: 20,
+  }),
+  containerPadding: {
+    paddingHorizontal: 18,
+    marginTop: 20,
+    alignItems: 'center',
   },
-  addToCartButtonText: {
-    color: 'white',
-    textAlign: 'center',
+  noStockText: {
+    marginTop: 20,
+    color: 'red',
+    fontSize: 16,
+  },
+  button: {
+    paddingVertical: 7,
+    width: '70%',
+    marginTop: 10,
   },
 });
 
