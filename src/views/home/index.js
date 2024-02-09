@@ -14,7 +14,7 @@ import {CommonActions} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const HomeView = ({navigation}) => {
-  const {addToCart} = useCart();
+  const {cart, addToCart, removeFromCart} = useCart();
   const {products, addProducts, updateProductQuantity} = useProduct();
   const {user, isDarkTheme, setUserData} = useUser();
   const currentTheme = getCurrentTheme(isDarkTheme);
@@ -37,6 +37,10 @@ const HomeView = ({navigation}) => {
   const onPressLogout = async () => {
     await AsyncStorage.removeItem('user');
     setUserData({credit: 3000, isDarkTheme: false});
+    cart.forEach(item => {
+      removeFromCart(item);
+    });
+    addProducts([]);
 
     navigation.dispatch(
       CommonActions.reset({

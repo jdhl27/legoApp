@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     backgroundColor: currentTheme?.background,
     borderRadius: 10,
     paddingHorizontal: 12,
-    paddingVertical: Platform.OS === 'ios' ? 15 : 6,
+    paddingVertical: Platform.OS === 'ios' ? 15 : 5,
     marginVertical: 10,
   }),
 
