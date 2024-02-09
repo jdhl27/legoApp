@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {sharedStyles} from '../../../constants/sharedStyles';
 
 export const styles = StyleSheet.create({
@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     backgroundColor: currentTheme?.background,
     borderRadius: 10,
     paddingHorizontal: 12,
-    paddingVertical: 15,
+    paddingVertical: Platform.OS === 'ios' ? 15 : 6,
     marginVertical: 10,
   }),
 
