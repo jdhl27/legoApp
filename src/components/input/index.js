@@ -1,46 +1,39 @@
 import React from 'react';
-import {View, Text, TextInput} from 'react-native';
+import {View, TextInput, Text} from 'react-native';
 import {styles} from './styles';
 
-const InputComponent = ({
-  editable = true,
-  multiline = false,
-  numberOfLines = null,
-  styleInput = null,
-  value = null,
-  placeholder = null,
-  title = ' ',
-  requiered = false,
+const InputLogin = ({
+  onSubmitEditing,
+  style,
+  placeholder,
+  password = false,
   onChangeText,
-  type = 'default',
   messageError = null,
-  onSubmitEditing = () => null,
+  type = 'default',
+  currentTheme,
 }) => {
   return (
-    <View>
-      {title && (
-        <Text style={styles.title}>
-          {title}
-          {requiered ? '*' : ' '}
-        </Text>
-      )}
+    <View
+      style={
+        style
+          ? [styles.container(currentTheme), style]
+          : styles.container(currentTheme)
+      }>
       <TextInput
-        editable={editable}
         keyboardType={type}
-        multiline={multiline}
-        numberOfLines={numberOfLines}
-        value={value}
-        style={styleInput ? [styles.input, styleInput] : styles.input}
+        style={styles.input(currentTheme)}
         placeholder={placeholder}
-        placeholderTextColor={'#889A94'}
-        onChangeText={text => {
-          onChangeText(text);
-        }}
+        placeholderTextColor={'#a1a8a6'}
+        onChangeText={onChangeText}
+        secureTextEntry={password}
+        autoCorrect={!password}
         onSubmitEditing={onSubmitEditing}
       />
-      {messageError && <Text style={styles.textError}>{messageError}</Text>}
+      {messageError && (
+        <Text style={styles.textError(currentTheme)}>{messageError}</Text>
+      )}
     </View>
   );
 };
 
-export default InputComponent;
+export default InputLogin;
