@@ -1,12 +1,24 @@
-// light.js
 export default {
-  background: '#f5f5f5',
+  background: '#fff',
+  secondaryBackground: '#f1f2ff',
+  reverseColor: '#181D31',
   text: '#333333',
-  primary: '#3498db',
-  accent: '#e74c3c',
-  secondaryText: '#7f8c8d',
+  secondaryText: '#fff',
+  grayText: '#aaa',
+  primary: '#4461F2',
+  accent: '#ff5b60',
   border: '#bdc3c7',
   success: '#2ecc71',
   error: '#e74c3c',
   warning: '#f39c12',
+  shadow: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 4,
+  },
 };

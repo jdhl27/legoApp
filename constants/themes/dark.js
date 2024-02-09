@@ -1,11 +1,24 @@
 export default {
-  background: '#121212',
+  background: '#181D31',
+  secondaryBackground: '#293561',
+  reverseColor: '#ffff',
   text: '#ffffff',
-  primary: '#3498db',
-  accent: '#e74c3c',
-  secondaryText: '#bdc3c7',
+  secondaryText: '#fff',
+  grayText: '#aaa',
+  primary: '#4461F2',
+  accent: '#ff5b60',
   border: '#2c3e50',
   success: '#2ecc71',
   error: '#e74c3c',
   warning: '#f39c12',
+  shadow: {
+    shadowColor: '#fff',
+    shadowOffset: {
+      width: 0,
+      height: 1.5,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3.5,
+    elevation: 4,
+  },
 };
