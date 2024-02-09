@@ -7,28 +7,32 @@ import HomeView from '../views/home';
 import ProductDetailsView from '../views/productDetails';
 import CartView from '../views/cart';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useUser} from '../context/user/UserProvider';
 
 const Stack = createNativeStackNavigator();
 
 function NavigationRoot() {
-  const [loading_, setLoading] = useState(true);
-  const [userId, setUserId] = useState(null);
+  const {user, setUserData} = useUser();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    AsyncStorage.getItem('userId').then(res => {
-      if (res != null) {
-        setUserId(res);
-        setLoading(false);
-      } else {
-        setUserId(null);
-        setLoading(false);
-      }
-    });
-  }, []);
+    if (!user.id) {
+      AsyncStorage.getItem('user')
+        .then(userString => {
+          if (userString) {
+            const userLogin = JSON.parse(userString);
+            setUserData({...userLogin});
+          }
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  }, [setUserData, user]);
 
   return (
-    <LoadingComponent loading={loading_}>
-      <Stack.Navigator initialRouteName={userId ? 'Home' : 'Login'}>
+    <LoadingComponent loading={isLoading}>
+      <Stack.Navigator initialRouteName={user?.id ? 'Home' : 'Login'}>
         <Stack.Screen
           name="Login"
           component={LoginView}
@@ -39,9 +43,21 @@ function NavigationRoot() {
           component={RegisterView}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Home" component={HomeView} />
-        <Stack.Screen name="ProductDetails" component={ProductDetailsView} />
-        <Stack.Screen name="Cart" component={CartView} />
+        <Stack.Screen
+          name="Home"
+          component={HomeView}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ProductDetails"
+          component={ProductDetailsView}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Cart"
+          component={CartView}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </LoadingComponent>
   );
