@@ -8,3 +8,14 @@ export const validateEmail = email => {
 
   return true;
 };
+
+export const validatePassword = password => {
+  const passwordExp =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{8,}$/;
+
+  if (!password || password === '' || !passwordExp.test(password)) {
+    return false;
+  }
+
+  return true;
+};
