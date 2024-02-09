@@ -1,4 +1,3 @@
-// ProductContext.js
 import React, {createContext, useReducer, useContext} from 'react';
 import productReducer from './ProductReducer';
 import {ADD_PRODUCTS, UPDATE_PRODUCT_QUANTITY} from '../types';

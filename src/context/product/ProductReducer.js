@@ -1,4 +1,3 @@
-// ProductReducer.js
 import {ADD_PRODUCTS, UPDATE_PRODUCT_QUANTITY} from '../types';
 
 export default (state, action) => {
