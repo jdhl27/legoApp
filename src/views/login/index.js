@@ -144,7 +144,7 @@ const LoginView = ({navigation}) => {
           <ButtonComponent
             disabled={isLoading}
             style={styles.buttonLogin}
-            text={'Login'}
+            text={isLoading ? 'Processing...' : 'Login'}
             onPress={() => {
               if (validateData()) {
                 handleLogin();

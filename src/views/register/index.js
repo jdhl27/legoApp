@@ -135,7 +135,7 @@ const RegisterView = ({navigation}) => {
           <ButtonComponent
             disabled={isLoading}
             style={styles.buttonRegister}
-            text={'Register'}
+            text={isLoading ? 'Processing...' : 'Register'}
             onPress={() => {
               if (validateData()) {
                 handleRegister();
