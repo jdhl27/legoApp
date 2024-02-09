@@ -19,10 +19,11 @@ export const authFirebase = async userState => {
     const docRef = query(collection(db, 'users'), where('id', '==', userId));
     const docSnap = await getDocs(docRef);
     if (!docSnap.empty) {
+      let user;
       docSnap.forEach(async doc => {
-        const user = doc.data();
+        user = doc.data();
       });
-      await AsyncStorage.setItem('userId', userId);
+      await AsyncStorage.setItem('user', JSON.stringify(user));
       return true;
     }
     return false;
@@ -58,7 +59,12 @@ export const registerUserFirebase = async userState => {
       id: userCredential.user.uid,
       ...userState,
     });
-    await AsyncStorage.setItem('userId', userCredential.user.uid);
+
+    const user = {
+      id: userCredential.user.uid,
+      ...userState,
+    };
+    await AsyncStorage.setItem('user', JSON.stringify(user));
     return true;
   } catch (error) {
     return false;
