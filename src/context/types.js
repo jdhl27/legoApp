@@ -2,3 +2,11 @@
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const UPDATE_CART_ITEM_QUANTITY = 'UPDATE_CART_ITEM_QUANTITY ';
+
+// Product
+export const ADD_PRODUCTS = 'ADD_PRODUCTS';
+export const UPDATE_PRODUCT_QUANTITY = 'UPDATE_PRODUCT_QUANTITY';
+
+// User
+export const SET_USER_DATA = 'SET_USER_DATA';
+export const UPDATE_CREDIT = 'UPDATE_CREDIT';
