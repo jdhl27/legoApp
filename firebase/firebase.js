@@ -1,4 +1,5 @@
 import {
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import {addDoc, collection, getDocs, query, where} from 'firebase/firestore';
@@ -26,4 +27,17 @@ export const authFirebase = async userState => {
   } catch (error) {
     return false;
   }
+};
+
+// Forgot password firebase
+export const forgotPasswordFirebase = email => {
+  return new Promise((resolve, reject) => {
+    sendPasswordResetEmail(auth, email)
+      .then(res => {
+        resolve(true);
+      })
+      .catch(error => {
+        resolve(false);
+      });
+  });
 };
