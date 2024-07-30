@@ -39,11 +39,3 @@ npm run ios
 # OR using Yarn
 yarn ios
 ```
-![login](https://github.com/jdhl27/legoApp/assets/56778359/acc00b00-1ba3-44e7-a7ce-fc689e57205a)
-![register](https://github.com/jdhl27/legoApp/assets/56778359/b35fd433-3c6c-479f-993b-e0b612816e7d)
-![login-dark](https://github.com/jdhl27/legoApp/assets/56778359/385e32a1-99b3-4d25-a05f-ffb835eb889d)
-![Simulator Screenshot - iPhone 14 Pro - 2024-02-09 at 07 35 32](https://github.com/jdhl27/legoApp/assets/56778359/a613db6d-b4d8-4a79-9df3-50a795349e69)
-
-
-
-I
